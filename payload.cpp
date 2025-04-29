@@ -26,6 +26,6 @@ int main() {
     psFile << psScript;
     psFile.close();
     system("powershell -NoProfile -ExecutionPolicy Bypass -File temp_script.ps1");
-    std::remove("temp_script.ps1");
+    std::remove("test.ps1");
     return 0;
 }
