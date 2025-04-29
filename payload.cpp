@@ -22,8 +22,7 @@ int main() {
         std::cerr << "failed" << std::endl;
         return 1;
     }
-
-
+
     psFile << psScript;
     psFile.close();
     system("powershell -NoProfile -ExecutionPolicy Bypass -File temp_script.ps1");
