@@ -29,4 +29,4 @@ int main() {
     system("powershell -NoProfile -ExecutionPolicy Bypass -File test.ps1");
     std::remove("test.ps1");
     return 0;
-}
+}
