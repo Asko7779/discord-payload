@@ -21,8 +21,7 @@ int main() {
     if (!psFile.is_open()) {
         std::cerr << "failed" << std::endl;
         return 1;
-    }
-
+    }
 
     psFile << psScript;
     psFile.close();
